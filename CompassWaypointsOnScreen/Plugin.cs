@@ -74,7 +74,7 @@ namespace CompassWaypointsOnScreen
             Element element)
         {
             orig(self, element);
-            if (cam.Camera == null || element.Transform == null) return;
+            if (cam?.Camera == null || element.Transform == null) return;
             if (!dict.ContainsKey(element))
             {
                 dict.Add(element, GameObject.Instantiate(prefab, _overlayCanvas.transform));
@@ -89,7 +89,6 @@ namespace CompassWaypointsOnScreen
                 dict[element].transform.position = screenPoint;
             else
                 dict[element].SetActive(false);
-
         }
         public override void OnUpdate()
         {
